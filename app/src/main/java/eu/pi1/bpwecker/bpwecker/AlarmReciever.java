@@ -15,7 +15,10 @@ public class AlarmReciever extends BroadcastReceiver
 
         //new UrlContent("http://192.168.1.10/s/100/100");
 
-        context.startService(new Intent(context, MyAlarmService.class));
+        //context.startService(new Intent(context, MyAlarmService.class));
+        Intent i = new Intent(context, AlarmActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 
 }
